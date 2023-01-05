@@ -1,6 +1,18 @@
+## IncrementalBinaryTree Gas Usage
+
+| depth | items | average tx cost to add an item (gas) |
+|-------|-------|--------------------------------------|
+| 4     | 16    | 216755                               |
+| 8     | 256   | 368124                               |
+| 12    | 4096  | 525975                               |
+
+## Testing Steps
+
 clone the repo
 
 forge install
+
+npm ci
 
 copy .env.example to .env and edit it
 

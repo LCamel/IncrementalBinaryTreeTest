@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 import "zk-kit/packages/incremental-merkle-tree.sol/contracts/IncrementalBinaryTree.sol";
-import "forge-std/console.sol";
+//import "forge-std/console.sol";
 
 contract TreeTest {
     using IncrementalBinaryTree for IncrementalTreeData;
@@ -15,6 +15,7 @@ contract TreeTest {
 
     function add(uint256 item) public {
         data.insert(item);
-        console.log("add: root: %d", data.root);
+
+        //console.log("add: root: %d", data.root);
     }
 }

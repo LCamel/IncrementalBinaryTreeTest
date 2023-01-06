@@ -1,12 +1,14 @@
 ## IncrementalBinaryTree Gas Usage
 
-| depth | items | average tx cost to add an item (gas) |
-|-------|-------|--------------------------------------|
-| 4     | 16    | 216755                               |
-| 8     | 256   | 368124                               |
-| 12    | 4096  | 525975                               |
+| Tree depth | Items added | Average TX cost to add an item (gas) |
+|------------|-------------|--------------------------------------|
+| 4          | 16          | 216755                               |
+| 8          | 256         | 368124                               |
+| 12         | 4096        | 525975                               |
 
 ## Testing Steps
+
+### Prepare
 
 clone the repo
 
@@ -16,18 +18,15 @@ npm ci
 
 copy .env.example to .env and edit it
 
-./anvil.sh
+### Run
 
-./deploy.sh 4; ./run.sh 16; cp run.txt 16.txt
+```
+./anvil.sh ; ./deploy.sh 4  ; time ./run.sh 16   ; ./anvilStop.sh ; cp run.txt 16.txt
+./anvil.sh ; ./deploy.sh 8  ; time ./run.sh 256  ; ./anvilStop.sh ; cp run.txt 256.txt
+./anvil.sh ; ./deploy.sh 12 ; time ./run.sh 4096 ; ./anvilStop.sh ; cp run.txt 4096.txt
+```
 
-restart anvil
-
-./deploy.sh 8; ./run.sh 256; cp run.txt 256.txt
-
-restart anvil
-
-./deploy.sh 12; ./run.sh 4096; cp run.txt 4096.txt
-
+### Examine
 
 ```
 % tail -n 1 16.txt; tail -n 1 256.txt; tail -n 1 4096.txt

@@ -45,3 +45,7 @@ copy .env.example to .env and edit it
 % grep gasUsed 4096.txt | perl -lane '$s += $F[1]; END { print $s / 4096 }'
 525975.577148438
 ```
+
+
+## Concept
+![IncrementalBinaryTree](./IncrementalBinaryTree.svg)

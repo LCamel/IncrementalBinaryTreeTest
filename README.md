@@ -47,5 +47,5 @@ copy .env.example to .env and edit it
 ```
 
 
-## Concept
+### Concept
 ![IncrementalBinaryTree](./IncrementalBinaryTree.svg)
